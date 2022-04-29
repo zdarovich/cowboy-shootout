@@ -1,5 +1,11 @@
-# Description
+# Requirements
+- Minikube
+- Virtualbox
+- Kubernetes
+- Docker
+- Golang
 
+# Description
 - We have a set of cowboys.
 - Each cowboy has a unique name, health points and damage points.
 - Cowboys list is stored in persistent storage (File, Database etc).
@@ -18,6 +24,9 @@
 ```
 minikube start
 minikube update-context
+```
+# Set docker registry to minikube
+```
 eval $(minikube docker-env)
 ```
 # Build cowboy docker image
@@ -28,7 +37,7 @@ docker build -f docker/cowboy/Dockerfile -t cowboy .
 ```
 docker build -f docker/log/Dockerfile -t log .
 ```
-# Apply rbac rules to enable pods get list of pods
+# Apply rbac rules to enable pods get list of pods inside cluster
 ```
 kubectl apply -f rbac.yaml
 ```
