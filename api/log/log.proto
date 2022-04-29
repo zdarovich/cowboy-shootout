@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package log;
+
+option go_package = "github.com/zdarovich/cowboy_shooters/api/log";
+
+service Log {
+  rpc HandleProduce (ProduceRequest) returns (ProduceResponse) {}
+}
+
+message ProduceRequest{
+  Record Record = 1;
+}
+
+message ProduceResponse{
+  uint64 offset = 1;
+}
+
+message Record{
+  bytes value = 1;
+  uint64 offset = 2;
+}

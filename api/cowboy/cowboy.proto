@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package log;
+
+option go_package = "github.com/zdarovich/cowboy_shooters/api/cowboy";
+
+service Cowboy {
+  rpc HandleShoot(ShootRequest) returns (ShootResponse) {}
+}
+
+message ShootRequest{
+  uint64 damage = 1;
+}
+
+message ShootResponse{
+  string msg = 1;
+}
