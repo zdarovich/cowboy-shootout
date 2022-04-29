@@ -30,7 +30,7 @@ docker build -f docker/log/Dockerfile -t log .
 ```
 # Apply rbac rules to enable pods get list of pods
 ```
-k apply -f rbac.yaml
+kubectl apply -f rbac.yaml
 ```
 # Run master script to deploy cowboys
 ```
